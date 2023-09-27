@@ -12,6 +12,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import io.kamel.image.KamelImage
+import io.kamel.image.asyncPainterResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
@@ -29,10 +31,14 @@ fun App() {
                 Text(greetingText)
             }
             AnimatedVisibility(showImage) {
-                Image(
-                    painterResource("compose-multiplatform.xml"),
-                    null
+                KamelImage(
+                    asyncPainterResource("https://sebi.io/demo-image-api/pigeon/chandan-chaurasia-B1IKvDctXAo-unsplash.jpg"),
+                    "Pigeuon"
                 )
+//                Image(
+//                    painterResource("compose-multiplatform.xml"),
+//                    null
+//                )
             }
         }
     }
